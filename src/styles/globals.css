@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border;
+}
+
+html,
+body,
+#root {
+  @apply h-full w-full overflow-hidden;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+/* Monaco Editor Overrides */
+.monaco-editor {
+  font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.monaco-editor .margin {
+  background-color: #1e1e1e;
+}
+
+.monaco-editor .line-numbers {
+  color: #858585;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#464646] rounded-full hover:bg-[#5a5a5a];
+}
+
+/* Selection */
+::selection {
+  @apply bg-[#264f78];
+}
+
+/* Focus Styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-[#007acc] ring-offset-2 ring-offset-[#1e1e1e];
+}
+
+/* Smooth Transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Text Selection in Input */
+input::selection,
+textarea::selection {
+  @apply bg-[#264f78] text-[#e0e0e0];
+}
+
+/* Loading Animation */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Fade In Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* Slide In Animation */
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.3s ease-out;
+}
